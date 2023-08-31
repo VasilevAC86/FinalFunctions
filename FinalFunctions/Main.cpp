@@ -1,9 +1,9 @@
-# include <iostream>
+п»ї# include <iostream>
 #include<cstdlib>
 #include<ctime>
 #include<algorithm>
 
-// Заполение массива случайными числами
+// Р—Р°РїРѕР»РµРЅРёРµ РјР°СЃСЃРёРІР° СЃР»СѓС‡Р°Р№РЅС‹РјРё С‡РёСЃР»Р°РјРё
 template <typename T>
 void fill_array(T arr[], const int length, int left, int right) {
 	srand(time(NULL));
@@ -11,7 +11,7 @@ void fill_array(T arr[], const int length, int left, int right) {
 		arr[i] = rand() % (right - left) + left;
 }
 
-// Вывод массива в консоль
+// Р’С‹РІРѕРґ РјР°СЃСЃРёРІР° РІ РєРѕРЅСЃРѕР»СЊ
 template <typename T>
 void print_arr (T arr[], const int length) {
 	std::cout << "{ ";
@@ -24,49 +24,49 @@ void type_Off(int num) { std::cout << "INT\n"; }
 void type_Off(double num) { std::cout << "DOUBLE\n"; }
 void type_Off(char sum) { std::cout << "CHAR\n"; }
 
-int sum_AB(int A, int B); // Прототип функции sum_AB
+int sum_AB(int A, int B); // РџСЂРѕС‚РѕС‚РёРї С„СѓРЅРєС†РёРё sum_AB
 
-template<typename T> // Сортировка массива
+template<typename T> // РЎРѕСЂС‚РёСЂРѕРІРєР° РјР°СЃСЃРёРІР°
 void middle_sort(T arr[], const int length);
 
-template<typename T> // Смещение массива по кругу
+template<typename T> // РЎРјРµС‰РµРЅРёРµ РјР°СЃСЃРёРІР° РїРѕ РєСЂСѓРіСѓ
 void move_arr(T arr[],const int length, int steps);
 
 int main() {
 	setlocale(LC_ALL, "Russian");
 	int n, m;
 
-	// Задача 1. Вывод типа данных числа
-	std::cout << "Задача 1. Тип данных\n\n";
+	// Р—Р°РґР°С‡Р° 1. Р’С‹РІРѕРґ С‚РёРїР° РґР°РЅРЅС‹С… С‡РёСЃР»Р°
+	std::cout << "Р—Р°РґР°С‡Р° 1. РўРёРї РґР°РЅРЅС‹С…\n\n";
 	std::cout << "77 - "; type_Off(77);
 	std::cout << "5.1 - "; type_Off(5.1);
 	std::cout << "'A' - "; type_Off('A');
 	std::cout << std::endl;
 
-	// Задача 2. Рекурсивная сумма чисел от А до B
-	std::cout << "Задача 2. Сумма чисел от А до В\n\nВведите два числа -> ";
+	// Р—Р°РґР°С‡Р° 2. Р РµРєСѓСЂСЃРёРІРЅР°СЏ СЃСѓРјРјР° С‡РёСЃРµР» РѕС‚ Рђ РґРѕ B
+	std::cout << "Р—Р°РґР°С‡Р° 2. РЎСѓРјРјР° С‡РёСЃРµР» РѕС‚ Рђ РґРѕ Р’\n\nР’РІРµРґРёС‚Рµ РґРІР° С‡РёСЃР»Р° -> ";
 	std::cin >> n >> m;	
-	std::cout << "Сумма чисел от " << n << " до " << m << " = " << sum_AB(n, m) << "\n\n";
+	std::cout << "РЎСѓРјРјР° С‡РёСЃРµР» РѕС‚ " << n << " РґРѕ " << m << " = " << sum_AB(n, m) << "\n\n";
 
-	// Задача 3. Сортировка массива между крайними отрицательными элементами
-	std::cout << "Задача 3. Сортировка массива\n\nИзначальный массив:\n";
+	// Р—Р°РґР°С‡Р° 3. РЎРѕСЂС‚РёСЂРѕРІРєР° РјР°СЃСЃРёРІР° РјРµР¶РґСѓ РєСЂР°Р№РЅРёРјРё РѕС‚СЂРёС†Р°С‚РµР»СЊРЅС‹РјРё СЌР»РµРјРµРЅС‚Р°РјРё
+	std::cout << "Р—Р°РґР°С‡Р° 3. РЎРѕСЂС‚РёСЂРѕРІРєР° РјР°СЃСЃРёРІР°\n\nРР·РЅР°С‡Р°Р»СЊРЅС‹Р№ РјР°СЃСЃРёРІ:\n";
 	const int size3 = 10;
 	int arr3[size3];
 	fill_array(arr3, size3, -10, 11);
 	print_arr(arr3, size3);
 	middle_sort(arr3, size3);
-	std::cout << "Итоговый массив: ";
+	std::cout << "РС‚РѕРіРѕРІС‹Р№ РјР°СЃСЃРёРІ: ";
 	print_arr(arr3, size3);
 
-	// Задача 4. Сдвиг массива по кругу
-	std::cout << "Задача 4. \nИзначальный массив:\n\n";
+	// Р—Р°РґР°С‡Р° 4. РЎРґРІРёРі РјР°СЃСЃРёРІР° РїРѕ РєСЂСѓРіСѓ
+	std::cout << "Р—Р°РґР°С‡Р° 4. \nРР·РЅР°С‡Р°Р»СЊРЅС‹Р№ РјР°СЃСЃРёРІ:\n\n";
 	const int size4 = 10;
 	int arr4[size4]{ 1,2,3,4,5,6,7,8,9,10 };
 	print_arr(arr4, size4);
-	std::cout << "Введите число -> ";
+	std::cout << "Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ -> ";
 	std::cin >> n;
 	move_arr(arr4, size4, n);
-	std::cout << "Итоговый массив:\n";
+	std::cout << "РС‚РѕРіРѕРІС‹Р№ РјР°СЃСЃРёРІ:\n";
 	print_arr(arr4, size4);
 
 	return 0;
@@ -100,17 +100,17 @@ void middle_sort(T arr[], const int length) {
 			last_index = i;
 			break;
 		}
-	// Пузырьковая сортировка
+	// РџСѓР·С‹СЂСЊРєРѕРІР°СЏ СЃРѕСЂС‚РёСЂРѕРІРєР°
 	/*for (short i = last_index - 1; i > first_index + 1; i--)
 		for (int j = first_index + 1; j < i; j++)
 			if (arr[j] > arr[j + 1])
 				std::swap(arr[j], arr[j + 1]);*/
 
-	// Быстрая сортирвока
+	// Р‘С‹СЃС‚СЂР°СЏ СЃРѕСЂС‚РёСЂРІРѕРєР°
 	std::sort(arr + first_index + 1, arr + last_index);
 }
 
-// Реализация функции sum_AB
+// Р РµР°Р»РёР·Р°С†РёСЏ С„СѓРЅРєС†РёРё sum_AB
 int sum_AB(int A, int B) { 
 	if (A == B)
 		return A;
